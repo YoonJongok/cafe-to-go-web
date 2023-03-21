@@ -1,13 +1,13 @@
-import AppRoutes from "./screens/AppRoutes";
-import Layout from "./components/Layout";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./screens/Router";
 import { GlobalStyles } from "./theme/global.styled";
 
 function App() {
 	return (
-		<Layout>
+		<BrowserRouter>
 			<GlobalStyles />
-			<AppRoutes />
-		</Layout>
+			<Router />
+		</BrowserRouter>
 	);
 }
 
