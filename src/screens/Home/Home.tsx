@@ -1,23 +1,55 @@
 import { gql, useMutation } from "@apollo/client";
-import { LoginMutation, LoginMutationVariables } from "../../generated/graphql";
 
-const LOGIN_MUTATION = gql`
-	mutation Login($email: String!, $password: String!) {
-		login(email: $email, password: $password) {
-			ok
-			error
-			token
+const GET_ALL_COFFEESHOPS_QUERY = gql`
+	query GetAllCoffeeShops {
+		getAllCoffeeShops {
+			id
+			name
+			slug
+			latitude
+			longitude
+			address
+			description
+
+			user {
+				id
+				username
+				email
+				name
+				avatarURL
+				location
+				githubUsername
+				followers {
+					totalFollowers
+				}
+				followings {
+					totalFollowings
+				}
+				isMe
+				totalFollowers
+				totalFollowings
+				isFollowing
+				isFollowed
+				createdAt
+				updatedAt
+			}
+			categories {
+				slug
+			}
+			likes
+			isMine
+			isLiked
+			likedBy {
+				id
+				username
+			}
+			averageRating
+			createdAt
+			updatedAt
 		}
 	}
 `;
 
 export const Home = () => {
-	const [loginMutaion] = useMutation<LoginMutation, LoginMutationVariables>(
-		LOGIN_MUTATION,
-		{}
-	);
-
-	// if (loading) return <p>Loading...</p>;
-	// if (error) return <p>Error :(</p>;
 	return <div>Home</div>;
 };
