@@ -3,10 +3,11 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "../Home";
 import Layout from "../../components/Layout";
 import { ProtectedRoute } from "./ProtectedRoute";
-import { Tv } from "../Tv";
 import Register from "../Register";
 import Login from "../Login";
 import { routes } from "../../config/routes";
+import CoffeeshopDetail from "../CoffeeshopDetail";
+import CreateCoffeeshop from "../CreateCoffeeshop";
 
 export const Router: React.FC = () => {
 	return (
@@ -21,13 +22,22 @@ export const Router: React.FC = () => {
 					}
 				/>
 				<Route
-					path="/tv"
+					path={routes.coffeeshop.create}
 					element={
 						<ProtectedRoute>
-							<Tv />
+							<CreateCoffeeshop />
 						</ProtectedRoute>
 					}
 				/>
+				<Route
+					path={routes.coffeeshop.detail}
+					element={
+						<ProtectedRoute>
+							<CoffeeshopDetail />
+						</ProtectedRoute>
+					}
+				/>
+
 				<Route path={routes.login} element={<Login />} />
 				<Route path={routes.register} element={<Register />} />
 

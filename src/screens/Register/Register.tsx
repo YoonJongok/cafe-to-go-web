@@ -21,6 +21,7 @@ import { logUserIn } from "../Router/ProtectedRoute";
 import { toast } from "react-toastify";
 import { routes } from "../../config/routes";
 import { Input } from "../../components/Input/Input";
+import PageTitle from "../../components/PageTitle";
 
 const CREATE_ACCOUNT_MUTATION = gql`
 	mutation CreateAccount(
@@ -120,6 +121,8 @@ export const Register: React.FC = () => {
 
 	return (
 		<Container>
+			<PageTitle title="Register" />
+
 			<LoginBox>
 				<LoginBoxTextWrapper>
 					<h2>Cafe To Go</h2>

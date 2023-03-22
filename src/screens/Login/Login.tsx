@@ -17,6 +17,7 @@ import { logUserIn } from "../Router/ProtectedRoute";
 import { toast } from "react-toastify";
 import { routes } from "../../config/routes";
 import { Input } from "../../components/Input/Input";
+import PageTitle from "../../components/PageTitle";
 
 const LOGIN_MUTATION = gql`
 	mutation Login($email: String!, $password: String!) {
@@ -95,6 +96,8 @@ export const Login: React.FC = () => {
 
 	return (
 		<Container>
+			<PageTitle title="LogIn" />
+
 			<LoginBox>
 				<LoginBoxTextWrapper>
 					<h2>Cafe To Go</h2>
