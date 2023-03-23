@@ -5,9 +5,7 @@ import {
 	LoginBoxTextWrapper,
 	Container,
 	Form,
-	InputContainer,
-	LoginBox,
-	FormErrorMsg,
+	RegisterBox,
 } from "./Register.styled";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -90,7 +88,7 @@ export const Register: React.FC = () => {
 				createAccount: { ok, error },
 			} = data;
 
-			if (!ok && error) {
+			if (!ok || error) {
 				return toast.error(error, {
 					position: toast.POSITION.BOTTOM_LEFT,
 					theme: "light",
@@ -123,7 +121,7 @@ export const Register: React.FC = () => {
 		<Container>
 			<PageTitle title="Register" />
 
-			<LoginBox>
+			<RegisterBox>
 				<LoginBoxTextWrapper>
 					<h2>Cafe To Go</h2>
 					<p>Register</p>
@@ -185,7 +183,7 @@ export const Register: React.FC = () => {
 					<button onClick={() => navigate(routes.login)}>Log in</button>
 					<button onClick={handleSubmit(onSubmit)}>Register</button>
 				</ButtonWrapper>
-			</LoginBox>
+			</RegisterBox>
 		</Container>
 	);
 };

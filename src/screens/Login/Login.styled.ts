@@ -35,34 +35,6 @@ export const LoginBoxTextWrapper = styled.div`
 	}
 `;
 
-export const Form = styled.form`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 10px;
-`;
-
-export const InputContainer = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: "flex-start";
-	margin-bottom: 15px;
-	input {
-		border-top-style: hidden;
-		border-right-style: hidden;
-		border-left-style: hidden;
-		border-bottom-style: groove;
-		border-radius: ${({ theme }) => theme.borderRadius};
-		padding: 10px 4px;
-		font-size: 1rem;
-		&:focus {
-			outline: none;
-		}
-	}
-`;
-
 export const ButtonWrapper = styled.div`
 	width: 100%;
 	height: 40px;

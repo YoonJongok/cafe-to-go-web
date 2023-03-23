@@ -3,7 +3,7 @@ export const routes = {
 	login: "/login",
 	register: "/register",
 	coffeeshop: {
-		create: "/add",
 		detail: "/shop/:id",
+		create: "/add",
 	},
 };

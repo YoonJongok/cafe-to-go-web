@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { LoginBox } from "../Login/Login.styled";
 
 export const Container = styled.div`
 	width: 100%;
@@ -8,19 +9,7 @@ export const Container = styled.div`
 	padding-top: 140px;
 `;
 
-export const LoginBox = styled.div`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	max-width: 460px;
-	width: 100%;
-	gap: 30px;
-	background: ${({ theme }) => theme.boxBgColor};
-	box-shadow: ${({ theme }) => theme.boxShadow};
-	padding: 40px 20px;
-	margin-inline: auto;
-`;
+export const RegisterBox = styled(LoginBox)``;
 
 export const LoginBoxTextWrapper = styled.div`
 	display: block;
@@ -41,26 +30,6 @@ export const Form = styled.form`
 	flex-direction: column;
 	align-items: center;
 	gap: 10px;
-`;
-
-export const InputContainer = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: "flex-start";
-	margin-bottom: 15px;
-	input {
-		border-top-style: hidden;
-		border-right-style: hidden;
-		border-left-style: hidden;
-		border-bottom-style: groove;
-		border-radius: ${({ theme }) => theme.borderRadius};
-		padding: 10px 4px;
-		font-size: 1rem;
-		&:focus {
-			outline: none;
-		}
-	}
 `;
 
 export const ButtonWrapper = styled.div`

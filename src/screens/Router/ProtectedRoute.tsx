@@ -2,7 +2,7 @@ import { makeVar, useReactiveVar } from "@apollo/client";
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-const TOKEN = "token";
+export const TOKEN = "token";
 
 export const isLoggedInVar = makeVar(Boolean(localStorage.getItem(TOKEN)));
 
